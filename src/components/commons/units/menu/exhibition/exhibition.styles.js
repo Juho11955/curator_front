@@ -42,7 +42,7 @@ export const ExhibitionInfo = styled.p `
 
 export const ExhibitionWrapper = styled.div`
     width: 1150px;
-    height: 1000px;
+    height: auto;
     margin: 50px auto 120px;
 `
 export const ExhibitionMenu = styled.div`
