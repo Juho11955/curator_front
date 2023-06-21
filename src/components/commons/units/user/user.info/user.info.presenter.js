@@ -154,7 +154,7 @@ export default function UserInfoView(props) {
       }
 
      const onClickMove = (purSeq) => {
-        
+
      }
 
     return (
