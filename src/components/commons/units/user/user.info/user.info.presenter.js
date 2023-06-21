@@ -10,6 +10,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { useRouter } from "next/router"
 import ModalBasic from "../../modal"
+import ModalMove from "./modal/modal"
 
 export default function UserInfoView(props) {
 
@@ -19,6 +20,7 @@ export default function UserInfoView(props) {
     const [id, setId] = useState();
     const [memberSeq, setMemberSeq] = useState();
     const back = process.env.NEXT_PUBLIC_URI;
+    const [modalOpen, setModalOpen] = useState(false);
   
     const [data, setData] = useState([]);
     const [cartList, setCartList] = useState([]);
@@ -26,6 +28,8 @@ export default function UserInfoView(props) {
     const [helpList, setHelpList] = useState([]);
     const [purList, setPurList] = useState([]);
     const [kakao, setKakao] = useState('');
+    const [modalShow, setModalShow] = useState();
+
   
     useEffect(() => {
       setNickName(sessionStorage.getItem('userNickname'))
@@ -110,8 +114,6 @@ export default function UserInfoView(props) {
       })
     }
 
-     // 모달창 노출 여부 state
-    const [modalOpen, setModalOpen] = useState(false);
 
     // 모달창 노출
     const showModal = () => {
@@ -153,9 +155,11 @@ export default function UserInfoView(props) {
         document.getElementById(purName).src = imagePro;
       }
 
-     const onClickMove = (purSeq) => {
-        
-     }
+    const onClickMove = (purSeq) => {
+      setModalShow(true);
+
+    }
+    
 
     return (
         <>
@@ -193,7 +197,6 @@ export default function UserInfoView(props) {
                 <C.MyPayTable key={i}>
                     <C.MyPayColumn1>
                         <C.ProductProfile>
-                         <C.ProductDelivery></C.ProductDelivery>
                          <C.Image src={''}/>
                         </C.ProductProfile>
                         <C.ProductInfo>
@@ -203,7 +206,7 @@ export default function UserInfoView(props) {
                         </C.ProductInfo>
                     </C.MyPayColumn1>
                     <C.MyPayColumn2>
-                        <C.ProductBtn onClick={() => onClickMove(el.purSeq)}>배송조회</C.ProductBtn>
+                        <C.ProductBtn onClick={onClickMove}>배송조회</C.ProductBtn>  {modalShow && <ModalMove setModalShow={setModalShow} purSeq={el.purSeq} />}
                         <C.ProductBtn onClick={onClickHelp}>교환,반품 신청</C.ProductBtn>
                         <C.ProductBtn onClick={onClickHelp}>판매자 문의 </C.ProductBtn>
                     </C.MyPayColumn2>
@@ -224,7 +227,7 @@ export default function UserInfoView(props) {
                     <tbody>
                         {cartList?.map((el,i) => (
                         <C.Tr key={i}>
-                            <C.Td><img style={{width: 75, height: 75}} src={el.postImageName}></img></C.Td><C.TdSummary>{el.postSummary}</C.TdSummary><C.TdPrice>{el.postEndPrice} 원</C.TdPrice><C.TdBtn onClick={() => onClickBuy(memberSeq, el.artistSeq, el.postTitle, el.postPrice, el.postSeq)}>주문하기</C.TdBtn><C.TdBtn onClick={() => onClickDel(memberSeq, el.postSeq)}>삭제하기</C.TdBtn>
+                            <C.Td><img style={{width: 75, height: 75}} src={el.postImageName}></img></C.Td><C.TdSummary>{el.postTitle}</C.TdSummary><C.TdPrice>{el.postEndPrice} 원</C.TdPrice><C.TdBtn onClick={() => onClickBuy(memberSeq, el.artistSeq, el.postTitle, el.postPrice, el.postSeq)}>주문하기</C.TdBtn><C.TdBtn onClick={() => onClickDel(memberSeq, el.postSeq)}>삭제하기</C.TdBtn>
                         </C.Tr>  
                         ))}    
                         {modalOpen && <ModalBasic setModalOpen={setModalOpen} kakao={kakao} />}

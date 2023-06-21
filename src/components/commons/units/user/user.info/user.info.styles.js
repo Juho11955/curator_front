@@ -188,6 +188,7 @@ export const MyPayTable = styled.div`
     justify-content: space-between;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     display: flex;
+
 `
 export const MyPayColumn1 = styled.div`
     width: 630px;
@@ -213,7 +214,7 @@ export const ProductProfile = styled.div`
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 `
 
 export const ProductDelivery = styled.div`
@@ -228,6 +229,7 @@ export const Image = styled.img`
     width: 110px;
     height: 120px;
     background-size: cover;
+
 `
 
 export const ProductInfo = styled.div`
@@ -298,7 +300,7 @@ export const MyWishTable = styled.table`
     margin-top: 20px;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     text-align: center;   
-    padding: 5px; 
+    padding: 5px 5px 20px; 
 `
 export const ThTitle = styled.th`
     height: 33px;
