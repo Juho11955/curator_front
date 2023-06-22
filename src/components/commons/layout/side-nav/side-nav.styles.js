@@ -55,9 +55,8 @@ export const ProfileImage = styled.div`
 export const Icon = styled.div`
     font-size: 15px;
     color: rgba(0,0,0,0.8);
-    padding: 10px;
+    padding: 10px 0 20px;
 `
-
 export const User = styled.div`
     width: 140px;
     height: 55px;
