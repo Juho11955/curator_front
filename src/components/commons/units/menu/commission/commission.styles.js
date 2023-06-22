@@ -101,6 +101,7 @@ export const Th = styled.th `
 export const No = styled.td`
    border-bottom: 1px solid rgba(0,0,0,0.1);
     width: 60px;
+    height: 32px;
 `
 export const Title = styled.td `
     &:hover {

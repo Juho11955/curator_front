@@ -169,7 +169,7 @@ export default function UserInfoView(props) {
             <C.InfoTitle>회원정보</C.InfoTitle>
             <C.Profile>
                 <C.MyProfile>
-                    <C.MyIcon><FontAwesomeIcon icon={faUser}/>&nbsp;{nickName}</C.MyIcon>
+                    <C.MyIcon><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;{nickName}</C.MyIcon>
                     <C.MyIcon><FontAwesomeIcon icon={faEnvelope}/>&nbsp;{id}</C.MyIcon>                 
                 </C.MyProfile>    
             </C.Profile>
@@ -189,7 +189,10 @@ export default function UserInfoView(props) {
                 <C.MembershipLevel>
                     <C.Level>{nickName}님은 [ Lv.{grade} 일반회원 ] 입니다. </C.Level>
                     <C.DottedLine></C.DottedLine>
-                    <C.Coupon>적립금 0원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 예치금 0원</C.Coupon>
+                    <C.Coupon>
+                      <span>적립금 0원</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      <span>예치금 0원</span>
+                    </C.Coupon>
                     </C.MembershipLevel>
                 </C.MembershipTable>
               {purList?.map((el, i) => (
@@ -197,7 +200,7 @@ export default function UserInfoView(props) {
                 <C.MyPayTable key={i}>
                     <C.MyPayColumn1>
                         <C.ProductProfile>
-                         <C.Image src={''}/>
+                         <C.Image/>
                         </C.ProductProfile>
                         <C.ProductInfo>
                             <C.ProductTitle>{el.purName}</C.ProductTitle>
@@ -243,7 +246,7 @@ export default function UserInfoView(props) {
                 <tbody>
                     {artistList?.map((el,i) => (
                     <C.Tr key={i}>
-                        <C.TdPlus><FontAwesomeIcon icon={faPlus} color="orange" size="sm"/>&nbsp;{el.artistName}</C.TdPlus><C.Td>{el.artistSns}</C.Td>
+                        <C.TdPlus><FontAwesomeIcon icon={faPlus} color="orange" size="sm"/>&nbsp;{el.artistName}</C.TdPlus><td>&nbsp;&nbsp;</td><C.TdSns>{el.artistSns}</C.TdSns>
                     </C.Tr>
                     ))}
                 </tbody>

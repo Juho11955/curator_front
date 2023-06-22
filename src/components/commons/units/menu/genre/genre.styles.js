@@ -18,12 +18,10 @@ export const GenreBanner = styled.div`
     border-bottom: 2px solid rgba(0,0,0,0.1);
     padding: 20px;
     margin: auto;
-   
     /* background-image: url('/images/pattern.png');
     background-size: cover;
     opacity: 0.8; */
 `
-
 export const BannerTitle = styled.div`
     font-family: serif;
     font-size: 35px;
@@ -119,12 +117,15 @@ export const ColumnInfo = styled.div`
     margin: auto;
 `
 export const ColumnTitle = styled.div`
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
 `
 
 export const ColumnContent = styled.div`
     font-size: 15px;
+    padding: 30px;
+    line-height: 25px;
+
 `
 export const ColumnProfile = styled.div`
     width: 20px;

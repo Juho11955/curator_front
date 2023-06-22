@@ -64,7 +64,7 @@ export const InfoTitle = styled.div`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
-    padding: 25px 40px 45px;
+    padding: 20px 40px 45px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 
     &:last-of-type {
@@ -75,26 +75,23 @@ export const Profile = styled.div`
 // 회원정보 수정 
 export const MyProfile = styled.div`
     width: 300px;
-    height: 50px;
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
 `
 export const MyName = styled.div`
     color: rgba(0,0,0,0.8);
     font-size: 17px;
     margin-bottom: 7px;
 `
+
 export const MyIcon = styled.div`
     display: flex;
     align-items: center;
     color: gray;
-    font-size: 16px;
-    padding-bottom: 5px;
+    font-size: 17px;    
+    padding-top:10px;
 `
-
-
 export const BtnModify = styled.button`
     width: 110px;
     height: 35px; 
@@ -154,11 +151,15 @@ export const MembershipLevel = styled.div`
     flex-direction: column;
 `
 export const DottedLine = styled.div`
+    width: 200px;
     border-bottom: 2px dotted rgba(0,0,0,0.2);
-    margin: 4px;
 `
 export const Level = styled.div``
-export const Coupon = styled.div``
+export const Coupon = styled.div`
+   width: 185px;
+   display: flex;
+   margin-right: auto;
+`
 
 export const PaymentTable = styled.div`
     width: 100%;
@@ -225,11 +226,12 @@ export const ProductDelivery = styled.div`
     color: #364D79;
     text-align: center;
 `
-export const Image = styled.img`
+export const Image = styled.div`
     width: 110px;
     height: 120px;
+    background-image: url('/images/ppp.png');
     background-size: cover;
-
+    background-position: center;
 `
 
 export const ProductInfo = styled.div`
@@ -297,7 +299,7 @@ export const MyWishTitle = styled.div`
 export const MyWishTable = styled.table`
     width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 25px;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     text-align: center;   
     padding: 5px 5px 20px; 
@@ -357,21 +359,26 @@ export const TdBtn = styled.button`
 
 // 즐겨찾기 작가 테이블 -------------------------
 export const MyArtistTable = styled.table`
-    width: 100%;
+    width: 500px;
     height: auto;
     display: flex;
-    justify-content: center;
+    
     align-items: center;
-    text-align: center;
 `
+
 export const TdPlus = styled.td`
     width: 80px;
     padding: 3px;
     border: 2px solid orange;
     border-radius: 5px;
+    text-align: center;
 `
 export const TdProfile = styled.td`
     font-size: 13px;
+`
+
+export const TdSns = styled.td`
+    width: 290px;
 `
 
 // 나의문의 테이블 ------------------------
@@ -385,6 +392,7 @@ export const ServiceTable = styled.table`
 
 export const TdHelpContent = styled.td`
     width: 610px;
+    height: 28px;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 `
 export const TdHelpDate = styled.td`
