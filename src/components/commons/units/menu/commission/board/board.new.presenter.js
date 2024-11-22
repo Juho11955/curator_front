@@ -105,7 +105,7 @@ export default function CommissionBoardNewView(props) {
 
           <C.BtnWrapper>
             <C.CancelBtn onClick={onClickCancel}>취소</C.CancelBtn>
-            <C.SubmitBtn onClick={onClickSubmit}>작성하기</C.SubmitBtn>
+            <C.SubmitBtn type='button' onClick={onClickSubmit}>작성하기</C.SubmitBtn>
           </C.BtnWrapper>
         </C.BoardForm>
        </C.BoardFormWrapper>
